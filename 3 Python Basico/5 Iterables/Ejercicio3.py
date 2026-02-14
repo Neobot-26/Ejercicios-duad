@@ -1,0 +1,14 @@
+my_list=[
+    4,
+    3,
+    6,
+    1,
+    7,
+]
+aux=0
+print(my_list)
+last_position=len(my_list)-1
+aux=my_list[0]
+my_list[0]=my_list[last_position]
+my_list[last_position]=aux
+print(my_list)

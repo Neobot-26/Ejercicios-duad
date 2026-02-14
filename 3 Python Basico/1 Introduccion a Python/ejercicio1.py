@@ -1,0 +1,6 @@
+print("Bienvenidos")
+print("Programa de Operaciones Matemáticas")
+print("************************************")
+print(1+1)
+print(90+430)
+print(5*4)

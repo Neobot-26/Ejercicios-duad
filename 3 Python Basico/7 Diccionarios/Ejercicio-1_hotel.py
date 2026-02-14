@@ -1,0 +1,21 @@
+my_first_dictionary={
+    "nombre":"Condesa",
+    "numero_de_estrellas":3,
+    "habitaciones":[{
+        "numero":1,
+        "piso":1,
+        "precio_por_noche":200,
+    },
+    {
+        "numero":2,
+        "piso":1,
+        "precio_por_noche":185,
+    },
+    {
+        "numero":3,
+        "piso":1,
+        "precio_por_noche":190,
+    },
+    ],
+}
+print(my_first_dictionary)
