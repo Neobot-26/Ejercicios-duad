@@ -1,1 +1,1 @@
-Mensaje de prueba "Hola"
+print("Mensaje de prueba Hola")
