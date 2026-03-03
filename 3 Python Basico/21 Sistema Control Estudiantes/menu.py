@@ -37,5 +37,3 @@ def menu_options():
                 print("Invalid option, select correct option")
         except ValueError as e:
             print(f"Error [ValueError]: Unable to convert the value 'abc' to integer. Details:{e}")
-
-        

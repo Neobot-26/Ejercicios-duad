@@ -44,7 +44,7 @@ def student_register(file_name,list_of_headers):
                 list_of_info.append((spanish_score+english_score+history_score+science_score)/4)
                 data.write_csv_filedata(file_name, list_of_info)
             else:
-                print("Student already exists in classroom")
+                print("Student already exists in classroom...")
             cycle=input("Would you like to add a new register?Y/N:")
             if cycle == "N" or cycle == "n":
                 break
