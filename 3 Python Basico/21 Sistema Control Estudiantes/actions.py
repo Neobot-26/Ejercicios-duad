@@ -127,7 +127,7 @@ def is_valid_score(score):
 def students_under_sixty(file_name):
     if data.verification_csv_file(file_name)!=0:
         print("-"*60)
-        print("Database does not exist, select another option")
+        print("Database does not exist, select another option ")
         print("-"*60)
     else:
         data.students_failing(file_name)
