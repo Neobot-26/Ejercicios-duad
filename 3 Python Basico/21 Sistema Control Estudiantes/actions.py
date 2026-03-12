@@ -110,9 +110,10 @@ def is_valid_classroom(classroom):
     valid_classroom=0
     if classroom==" ":
         valid_classroom=1
-    else:
-        if not classroom[0].isdigit() or not classroom[1].isdigit() or not classroom[2].isalpha():
-            valid_classroom=1
+    elif len(classroom)!=3:
+        valid_classroom=1
+    elif not classroom[0].isdigit() or not classroom[1].isdigit() or not classroom[2].isalpha():
+        valid_classroom=1
     return valid_classroom
 
 def is_valid_score(score):
