@@ -22,25 +22,13 @@ def student_register(file_name,list_of_headers):
                 if data.student_in_class(file_name,name_student,classroom_student)==0:
                     list_of_info.append(name_student)
                     list_of_info.append(classroom_student)
-                    spanish_score=int(input("Enter Spanish Score:"))
-                    while is_valid_score(spanish_score)==1:
-                        print("Score not valid, enter a valid score")
-                        spanish_score=int(input("Enter Spanish Score:"))
+                    spanish_score=subject_matter("Spanish")
                     list_of_info.append(spanish_score)
-                    english_score=int(input("Enter English Score:"))
-                    while is_valid_score(english_score)==1:
-                        print("Score not valid, enter a valid score")
-                        english_score=int(input("Enter English Score:"))
+                    english_score=subject_matter("English")
                     list_of_info.append(english_score)
-                    history_score=int(input("Enter History Score:"))
-                    while is_valid_score(history_score)==1:
-                        print("Score not valid, enter a valid score")
-                        history_score=int(input("Enter History Score:"))
+                    history_score=subject_matter("History")
                     list_of_info.append(history_score)
-                    science_score=int(input("Enter Science Score:"))
-                    while is_valid_score(science_score)==1:
-                        print("Score not valid, enter a valid score")
-                        science_score=int(input("Enter Science Score:"))
+                    science_score=subject_matter("Science")
                     list_of_info.append(science_score)
                     list_of_info.append((spanish_score+english_score+history_score+science_score)/4)
                     data.write_csv_filedata(file_name, list_of_info)
@@ -51,6 +39,7 @@ def student_register(file_name,list_of_headers):
                     break
             except ValueError as e:
                 print(f"Error [ValueError]: Unable to convert the value 'abc' to integer. Details:{e}")
+                print("Re-enter information of Student")
 
 def student_delete(file_name,list_of_headers):
     confirm_delete="Y"
@@ -69,6 +58,7 @@ def student_delete(file_name,list_of_headers):
             confirm_delete=input("Student exist in registers, would you like to proceed, Y/N:")
             if confirm_delete=="Y" or confirm_delete=="y":
                 data.delete_student(file_name,name_student,classroom_student,list_of_headers)
+                print(f"The student:{name_student} from classroom:{classroom_student} was deleted")
         else:
             print("Student is not present is registers")
 
@@ -129,3 +119,10 @@ def print_database_error():
     print("-"*60)
     print("Database does not exist, select another option ")
     print("-"*60)
+
+def subject_matter(field_of_study):
+    subject_score=int(input(f"Enter {field_of_study} Score:"))
+    while is_valid_score(subject_score)==1:
+        print("Score not valid, enter a valid score")
+        subject_score=int(input(f"Enter {field_of_study} Score:"))
+    return subject_score
