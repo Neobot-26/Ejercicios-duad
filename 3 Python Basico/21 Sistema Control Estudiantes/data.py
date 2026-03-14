@@ -156,4 +156,4 @@ def students_failing(file_path):
           quantity_of_students=1
       num_register+=1
     if quantity_of_students==0:
-      print("There are not failing students in the register")
+      print("There are not failing students in registers")
